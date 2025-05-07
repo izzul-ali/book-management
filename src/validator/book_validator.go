@@ -21,5 +21,9 @@ func BookValidator(b model.Book) error {
 		return errors.New("content is required")
 	}
 
+	if b.PublishedYear < 1 {
+		return errors.New("invalid year")
+	}
+
 	return nil
 }
